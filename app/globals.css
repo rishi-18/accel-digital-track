@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-red: #E40000;
+    --brand-red-dark: #B91C1C;
+    --brand-navy: #0F172A;
+    --brand-slate: #1E293B;
+    --brand-green: #16A34A;
+    --brand-amber: #EA580C;
+    --surface-bg: #F8FAFC;
+    --surface-card: #FFFFFF;
+    --border-subtle: #E2E8F0;
+  }
+
+  body {
+    background-color: var(--surface-bg);
+    color: var(--brand-navy);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom sleek range slider */
+.custom-range-slider {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 100% !important;
+  height: 6px !important;
+  border-radius: 9999px !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+  cursor: pointer !important;
+}
+
+.custom-range-slider::-webkit-slider-runnable-track {
+  width: 100% !important;
+  height: 6px !important;
+  cursor: pointer !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  height: 18px !important;
+  width: 18px !important;
+  border-radius: 50% !important;
+  background: #E40000 !important;
+  border: 2.5px solid #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+  cursor: pointer !important;
+  margin-top: -6px !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+}
+
+.custom-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 2px 6px rgba(228, 0, 0, 0.4) !important;
+}
+
+.custom-range-slider::-webkit-slider-thumb:active {
+  transform: scale(1.25) !important;
+  box-shadow: 0 0 0 4px rgba(228, 0, 0, 0.2) !important;
+}
+
+.custom-range-slider::-moz-range-track {
+  width: 100% !important;
+  height: 6px !important;
+  cursor: pointer !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.custom-range-slider::-moz-range-thumb {
+  height: 18px !important;
+  width: 18px !important;
+  border-radius: 50% !important;
+  background: #E40000 !important;
+  border: 2.5px solid #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+  cursor: pointer !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Pulsing and smooth transitions */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
